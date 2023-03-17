@@ -36,9 +36,10 @@
     <link href="../../public/lib/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
     <link href="../../public/lib/jquery-switchbutton/jquery.switchButton.css" rel="stylesheet">
 
-    <link href="../../public/lib/datatables/jquery.dataTables.css" rel="stylesheet">
+    <link href="../../public/datatables/jquery.dataTables.min.css" rel="stylesheet">
     <link href="../../public/lib/select2/css/select2.min.css" rel="stylesheet">
-
+    <link href="../../public/datatables/buttons.dataTables.min.css" rel="stylesheet">
+    
     <!-- Bracket CSS -->
     <link rel="stylesheet" href="../../public/css/bracket.css">
   </head>
@@ -691,6 +692,7 @@
 
       <div class="br-section-wrapper">
           <h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-b-10">Mantenimiento de Producto</h6>
+          <button id="btnnuevo" class="btn btn-outline-success btn-block mg-b-10">Nuevo registro</button>
           <div class="table-wrapper">
             <table id="producto_data" class="table display responsive nowrap">
               <thead>
@@ -710,6 +712,10 @@
     </div><!-- br-pagebody -->
 
     </div><!-- br-mainpanel -->
+
+      <?php include_once("modalmantenimiento.php"); ?>
+
+
     <!-- ########## END: MAIN PANEL ########## -->
 
     <script src="../../public/lib/jquery/jquery.js"></script>
@@ -730,8 +736,13 @@
     <script src="../../public/lib/select2/js/select2.min.js"></script>
 
 
+    <script src="../../public/datatables/buttons.html5.min.js"></script>
+    <script src="../../public/datatables/buttons.colVis.min.js"></script>
+    <script src="../../public/datatables/jszip.min.js"></script>
+    <script src="../../public/datatables/dataTables.buttons.min.js"></script>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script type="text/javaScript" src="mntproducto.js"></script>
   </body>

@@ -2,8 +2,9 @@ var tabla;
 
 function init(){
 
-
-
+    $("#producto_form").on("submit",function(e){
+      guardaryeditar(e);
+    });
 
 }
 
@@ -58,5 +59,73 @@ $(document).ready(function(){
 		}
 	}).DataTable();
 });
+
+
+function guardaryeditar(e){
+  e.preventDefault();
+  var formData = new FormData($("#producto_form")[0]);
+    $.ajax({
+        url: "../../controller/producto.php?op=Guardaryeditar",
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(datos){
+            $('#producto_form')[0].reset();
+            $("#modalmantenimiento").modal('hide');
+            $('#producto_data').DataTable().ajax.reload();
+
+            swal.fire(
+                'Registro!',
+                'El registro correctamente.',
+                'success'
+            )
+        }
+    });
+}
+
+function editar(){
+
+}
+
+function eliminar(prod_id){
+
+    Swal.fire({
+        title: '¿Estás seguro?',
+        text: "¡No podrás revertir esto!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '¡Sí, bórralo!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+
+          $.post("../../controller/producto.php?op=eliminar", {prod_id:prod_id}, function (data){
+
+          });
+
+          /* para que se actualice el dataTable luego de eliminar el datos  */
+
+          $('#producto_data').DataTable().ajax.reload();
+
+          Swal.fire(
+            '¡Eliminado!',
+            'Su archivo ha sido eliminado.',
+            'success'
+          )
+        }
+      });
+
+}
+
+
+$(document).on('click', "#btnnuevo", function () {
+    $('#mdltitulo').html('Nuevo Registro');
+    $('#modalmantenimiento').modal('show');
+  });
+
+
+  
 
 init();
