@@ -36,6 +36,8 @@
     <link href="../../public/datatables/jquery.dataTables.min.css" rel="stylesheet">
     <link href="../../public/lib/select2/css/select2.min.css" rel="stylesheet">
     <link href="../../public/datatables/buttons.dataTables.min.css" rel="stylesheet">
+
+    <link href="../../public/lib/select2/css/select2.min.css" rel="stylesheet">
     
     <!-- Bracket CSS -->
     <link rel="stylesheet" href="../../public/css/bracket.css">

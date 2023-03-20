@@ -47,7 +47,9 @@
               <thead>
                 <tr>
                   <th class="wd-15p">Nombre</th>
+                  <th class="wd-15p">Categoria</th>
                   <th class="wd-20p">Descripción</th>
+                  <th class="wd-15p">Cant.</th>
                   <th class="wd-15p"></th>
                   <th class="wd-15p"></th>
                 </tr>
